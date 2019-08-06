@@ -48,6 +48,6 @@ class AuthProvider extends PureComponent {
   }
 }
 
-const TestProvider = AuthProvider;
+const TestProvider = Provider;
 
 export { AuthProvider, AuthConsumer, TestProvider};

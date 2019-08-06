@@ -9,19 +9,24 @@ class Header extends PureComponent {
       <AuthConsumer>
         {({ isAuthorized, email, logout }) => (
           <Fragment>
-            <SectionTitle className="header__title">Header</SectionTitle>
-            <div className="header__content">
-              {isAuthorized && (
-                <div className="header-menu">
-                  <p className="header-menu__email header-email t-header-email">
-                    {email}
-                  </p>
-                  <button onClick={logout} className="header-menu__button t-logout button">
-                    Выйти
-                  </button>
+            {isAuthorized && (
+              <Fragment>
+                <SectionTitle className="header__title">Header</SectionTitle>
+                <div className="header__content">
+                  <div className="header-menu">
+                    <p className="header-menu__email header-email t-header-email">
+                      {email}
+                    </p>
+                    <button
+                      onClick={logout}
+                      className="header-menu__button t-logout button"
+                    >
+                      Выйти
+                    </button>
+                  </div>
                 </div>
-              )}
-            </div>
+              </Fragment>
+            )}
           </Fragment>
         )}
       </AuthConsumer>
