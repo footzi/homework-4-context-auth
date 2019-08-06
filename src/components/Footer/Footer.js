@@ -4,7 +4,9 @@ import './Footer.css';
 
 class Footer extends PureComponent {
   render() {
-    return 'empty';
+    // Не пропсы а authConsumer!!!
+    console.log(this.props)
+    return <h1>Footer</h1>;
   }
 }
 
