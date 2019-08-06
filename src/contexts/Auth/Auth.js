@@ -7,11 +7,6 @@ const defaultUser = {
   password: '123'
 }
 
-// const defaultUser = {
-//   email: '1',
-//   password: '1'
-// }
-
 class AuthProvider extends PureComponent {
   state = {email: '', authorizeError: '', isAuthorized: false}
  
@@ -53,4 +48,6 @@ class AuthProvider extends PureComponent {
   }
 }
 
-export { AuthProvider, AuthConsumer };
+const TestProvider = AuthProvider;
+
+export { AuthProvider, AuthConsumer, TestProvider};

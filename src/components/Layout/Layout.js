@@ -1,23 +1,21 @@
 import React, { PureComponent, Fragment } from 'react';
-import Main from '../Main';
-import LoginForm from '../LoginForm';
 import './Layout.css';
 
 class Layout extends PureComponent {
   render() {
-    const { header, Footer, children } = this.props;
-    // const { footer } = this.props;
-    // console.log(this.props)
+    const { header, footer, children } = this.props;
+    const classWithHeader = header ? 'main--with-header' : '';
+    const classWithFooter = footer ? 'main--with-footer' : '';
 
     return (
       <Fragment>
-        {header()}
-        <Main>
+        {header && <header className="header">{header}</header>}
+        <main className={`main ${classWithHeader} ${classWithFooter}`}>
           {children}
-        </Main>
-        {/* <Footer /> */}
+        </main>
+        {footer && <footer className="footer">{footer}</footer>}
       </Fragment>
-    )
+    );
   }
 }
 

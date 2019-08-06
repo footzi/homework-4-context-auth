@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent, Fragment } from 'react';
 import SectionTitle from '../SectionTitle';
 import { AuthConsumer } from '../../contexts/Auth';
 import './Header.css';
@@ -8,7 +8,7 @@ class Header extends PureComponent {
     return (
       <AuthConsumer>
         {({ isAuthorized, email, logout }) => (
-          <header className="header">
+          <Fragment>
             <SectionTitle className="header__title">Header</SectionTitle>
             <div className="header__content">
               {isAuthorized && (
@@ -22,7 +22,7 @@ class Header extends PureComponent {
                 </div>
               )}
             </div>
-          </header>
+          </Fragment>
         )}
       </AuthConsumer>
     );
